@@ -168,10 +168,11 @@ while(Running):
             if not ret:
                 pygame.quit()
                 break
+            frame = cv.flip(frame, 1)
             frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
 
             frame_surface = pygame.surfarray.make_surface(np.rot90(frame))
-            screen.blit(frame_surface, (35, 145))
+            screen.blit(frame_surface, (253, 276))
             pygame.display.update()
             pygame.display.flip()
             clock.tick(fps)
